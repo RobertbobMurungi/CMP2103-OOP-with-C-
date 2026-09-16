@@ -1,14 +1,24 @@
-// Given a dataset of emission released in Kampala City;
-// Date     Month       Year Quanity
-// 08 8.0   '2026'      40
-// 10 8.0   '2026'      60
-// 12 8.0   '2027'      90
+#include <iostream>
+#include <iomanip>
 
-// Write a program that display date as dd/mm/yyy and Quantity in a tabular form. As usual, the program should prompt the user to enter values.
+using namespace std;
 
-// Output example.
+int main() {
+    cout << left << setw(15) << "Date" << "Quantity" << endl;
 
-// Date           Year Quanity
-// 08/8/2026      40
-// 10/8/2026      60
-// 12/8/2027      90
+    cout << setfill('0') << setw(2) << 8 << "/"
+         << setfill('0') << setw(1) << 8 << "/"
+         << 2026
+         << setfill(' ') << setw(7) << "" << 40 << endl;
+    cout << setfill('0') << setw(2) << 10 << "/"
+         << setfill('0') << setw(1) << 8 << "/"
+         << 2026
+         << setfill(' ') << setw(7) << "" << 60 << endl;
+
+    cout << setfill('0') << setw(2) << 12 << "/"
+         << setfill('0') << setw(1) << 8 << "/"
+         << 2027
+         << setfill(' ') << setw(7) << "" << 90 << endl;
+
+    return 0;
+}

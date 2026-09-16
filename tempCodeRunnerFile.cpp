@@ -1,4 +1,3 @@
-// Moldify the dataframe program in chapter 2 to use vectors
 #include <iostream>
 #include <vector>
 #include <numeric>
@@ -7,7 +6,7 @@
 
 struct RowData {
     int index;
-    std::vector<double> values;
+    std::vector<double> values; 
 };
 
 double calculateSum(const std::vector<double>& vec) {
@@ -37,6 +36,7 @@ int main() {
         {3, {110, 150, 100}},
         {4, {100, 105, 95}}
     };
+
     std::cout << std::left 
               << std::setw(6)  << "ind"
               << std::setw(8)  << "ELE"
@@ -48,6 +48,7 @@ int main() {
               << "\n";
 
     std::cout << std::string(56, '-') << "\n";
+
     std::cout << std::fixed << std::setprecision(2);
     for (const auto& row : dataframe) {
         double sum = calculateSum(row.values);

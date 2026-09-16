@@ -1,9 +1,32 @@
-// Write a program that takes an operation followed by two operands and outputs the result. For example:
-// + 100 3.14
-// ∗ 4 5
+#include <iostream>
+#include <string>
 
-// Read the operation into a string called operation and use an if-statement to figure out which
-// operation the user wants, for example, if (operation=="+"). Read the operands into variables
-// of type double. Implement this for operations called +, −, ∗, /, plus, minus, mul, and div with
-// their obvious meanings.
+int main() {
+    std::string operation;
+    double val1 = 0.0;
+    double val2 = 0.0;
 
+    std::cout << "Enter an operation followed by two numbers (e.g., + 100 3.14): ";
+    if (!(std::cin >> operation >> val1 >> val2)) {
+        std::cerr << "Error: Invalid input format." << std::endl;
+        return 1;
+    }
+
+    if (operation == "+" || operation == "plus") {
+        std::cout << "Result: " << (val1 + val2) << std::endl;
+    } else if (operation == "-" || operation == "minus") {
+        std::cout << "Result: " << (val1 - val2) << std::endl;
+    } else if (operation == "*" || operation == "mul") {
+        std::cout << "Result: " << (val1 * val2) << std::endl;
+    } else if (operation == "/" || operation == "div") {
+        if (val2 == 0.0) {
+            std::cerr << "Error: Division by zero is undefined." << std::endl;
+        } else {
+            std::cout << "Result: " << (val1 / val2) << std::endl;
+        }
+    } else {
+        std::cout << "Error: Unknown operation '" << operation << "'." << std::endl;
+    }
+
+    return 0;
+}
