@@ -1,3 +1,4 @@
+#include<iostream>
 int main() {
     double t;
     std::cout << "Enter time, t (in seconds): ";
