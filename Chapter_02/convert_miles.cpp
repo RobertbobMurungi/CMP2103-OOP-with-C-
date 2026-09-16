@@ -1,3 +1,20 @@
-// Write a program in C++ that converts from miles to kilometers.
-// Your program should have a reasonable prompt for the user to enter a number of miles.
-// Hint: A mile is 1.609 kilometers.
+#include <iostream>
+
+int main() {
+    
+    const double KM_PER_MILE = 1.609;
+    
+    double miles = 0.0;
+    
+    std::cout << "Enter the distance in miles: ";
+    if (std::cin >> miles) {
+    
+        double kilometers = miles * KM_PER_MILE;
+        
+        std::cout << miles << " miles is equal to " << kilometers << " kilometers.\n";
+    } else {
+        std::cerr << "Invalid input. Please enter a valid number.\n";
+    }
+
+    return 0;
+}

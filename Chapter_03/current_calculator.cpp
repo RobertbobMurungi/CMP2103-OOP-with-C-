@@ -1,7 +1,24 @@
-// write a program that calculates the current through a 200-μF capacitor whose voltage is given;
-//        ⎧  50t V          0 < t < 1
-// v(t) = ⎪  100 - 50t V    1 < t < 3
-//        ⎪  -200 + 50t V   3 < t < 4
-//        ⎩  0 V            otherwise
+int main() {
+    double t;
+    std::cout << "Enter time, t (in seconds): ";
+    if (!(std::cin >> t)) {
+        std::cerr << "Invalid input." << std::endl;
+        return 1;
+    }
 
-// The program should prompt the user to enter time, t.
+    double current_mA = 0.0;
+
+    if (t > 0.0 && t < 1.0) {
+        current_mA = 10.0;
+    } else if (t > 1.0 && t < 3.0) {
+        current_mA = -10.0;
+    } else if (t > 3.0 && t < 4.0) {
+        current_mA = 10.0;
+    } else {
+        current_mA = 0.0;
+    }
+
+    std::cout << "Current i(" << t << ") = " << current_mA << " mA" << std::endl;
+
+    return 0;
+}

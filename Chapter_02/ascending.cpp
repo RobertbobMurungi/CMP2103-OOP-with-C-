@@ -1,4 +1,20 @@
-// Write a program that prompts the user to enter three integer values, and
-// then outputs the values in numerical sequence separated by commas.
-// So, if the user enters the values 10 4 6, the output should be 4, 6, 10.
-// If two values are the same, they should just be ordered together. So, the input 4 5 4 should give 4, 4, 5.
+#include <iostream>
+#include <algorithm>
+
+int main() {
+    int val1, val2, val3;
+
+    std::cout << "Enter three integer values: ";
+    if (!(std::cin >> val1 >> val2 >> val3)) {
+        std::cerr << "Invalid input." << std::endl;
+        return 1;
+    }
+
+    int smallest = std::min({val1, val2, val3});
+    int largest = std::max({val1, val2, val3});
+    int middle = (val1 + val2 + val3) - smallest - largest;
+
+    std::cout << smallest << ", " << middle << ", " << largest << std::endl;
+
+    return 0;
+}

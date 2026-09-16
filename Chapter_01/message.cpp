@@ -1,2 +1,9 @@
-// (Display three different messages) Write a program that displays Welcome to
-// C++, Welcome to OOP, and Programming is fun.
+#include <iostream>
+
+int main() {
+    std::cout << "Welcome to C++" << std::endl;
+    std::cout << "Welcome to OOP" << std::endl;
+    std::cout << "Programming is fun." << std::endl;
+
+    return 0;
+}
